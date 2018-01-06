@@ -16,7 +16,7 @@ class QuadRenderer(Widget):
 
     def draw_quads(self, number):
         star_list = []
-        for number in xrange(number):
+        for number in range(number):
             rand_x = random()*self.size[0]
             rand_y = random()*self.size[1]
             size = 28.

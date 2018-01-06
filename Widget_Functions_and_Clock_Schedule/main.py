@@ -14,25 +14,25 @@ class CountWidget(Widget):
 				'partial function called'), 2.5)
 
 	def example_with_partial(self, string, dt):
-		print string
+		print(string)
 
 	def increment_count(self, dt):
 		self.count += 1
 
 	def on_count(self, instance, value):
-		print 'Clock Incremented: ', instance, value
+		print('Clock Incremented: ', instance, value)
 
 	def on_touch_down(self, touch):
 		if self.collide_point(touch.x, touch.y):
-			print 'Touched Count Widget at: ', touch.x, touch.y
+			print('Touched Count Widget at: ', touch.x, touch.y)
 
 class RootWidget(Widget):
 
 	def a_function(self):
-		print 'Doing Touch Down Function'
+		print('Doing Touch Down Function')
 	
 	def on_touch_move(self, touch):
-		print touch.dx, touch.dy
+		print(touch.dx, touch.dy)
 
 class WidgetFunctionsApp(App):
 

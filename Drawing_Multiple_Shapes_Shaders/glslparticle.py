@@ -100,12 +100,12 @@ class GlslParticle(object):
         datasize = texsize ** 2
 
         # initialize positions to be x = y = 1024
-        v = [32768 for x in xrange(datasize * 2)]
+        v = [32768 for x in range(datasize * 2)]
         self.particles_pos = pack('H' * datasize * 2, *v)
 
         # initialize velocity to be random, 1024 == 0
-        v = [int((random() - 0.5) * 32 + 1024) * 32 for x in xrange(datasize * 2)]
-        print [x / 32. - 1024 for x in  v[:2] ]
+        v = [int((random() - 0.5) * 32 + 1024) * 32 for x in range(datasize * 2)]
+        print([x / 32. - 1024 for x in  v[:2] ])
         self.particles_vel = pack('H' * datasize * 2, *v)
 
         # create textures
@@ -169,7 +169,7 @@ class GlslParticle(object):
         self.fbo_vel, self.fbo_vel2 = self.fbo_vel2, self.fbo_vel
 
     def dump(self, count):
-        print '-- [ dump ] --------------------------------------------'
+        print('-- [ dump ] --------------------------------------------')
         datasize = self.texsize ** 2
 
         rawpos = unpack('HH' * datasize, self.fbo_pos.pixels)
@@ -178,20 +178,20 @@ class GlslParticle(object):
         rawvel = unpack('HH' * datasize, self.fbo_vel.pixels)
         vel = [v / 32. - 1024 for v in rawvel]
 
-        for index in xrange(min(count, datasize)):
-            print 'particle {}: pos=({:>6}, {:>6}) vel=({:>6}, {:>6})'.format(
+        for index in range(min(count, datasize)):
+            print('particle {}: pos=({:>6}, {:>6}) vel=({:>6}, {:>6})'.format(
                     index,
                     pos[index * 2],
                     pos[index * 2 + 1],
                     vel[index * 2],
-                    vel[index * 2 + 1])
+                    vel[index * 2 + 1]))
 
     def update_mesh(self, mesh):
         datasize = self.texsize ** 2
         rawpos = unpack('HH' * datasize, self.fbo_pos.pixels)
         # manually center on a 640x480 screen
         mesh.vertices = [(v / 32.) - 1024 + 320 for v in rawpos]
-        mesh.indices = range(datasize)
+        mesh.indices = list(range(datasize))
 
     def _create_texture(self, data):
         texsize = self.texsize
@@ -201,7 +201,7 @@ class GlslParticle(object):
 
     def _print_shader(self, text):
         for index, line in enumerate(text.splitlines()):
-            print index, line
+            print(index, line)
 
 
 if __name__ == '__main__':

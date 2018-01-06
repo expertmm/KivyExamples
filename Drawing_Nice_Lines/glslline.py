@@ -55,10 +55,10 @@ class NiceLineRenderer(Widget):
 
     def draw_line(self, points_list, width=5.):
         vertex_format = [
-            ('vPosition', 2, 'float'),
-            ('vdxdy', 2, 'float'),
-            ('vWidth', 1, 'float'),
-            ('vColor', 4, 'float')
+            (b'vPosition', 2, 'float'),
+            (b'vdxdy', 2, 'float'),
+            (b'vWidth', 1, 'float'),
+            (b'vColor', 4, 'float')
             ]
         indices = []
         ie = indices.extend

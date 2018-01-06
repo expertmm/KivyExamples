@@ -12,7 +12,7 @@ class RootWidget(Widget):
     
     def draw_stars_simple(self, number):
         with self.canvas.before:
-            for number in xrange(number):
+            for number in range(number):
                 star_choice = self.choose_star()
                 rand_x = random()*self.width
                 rand_y = random()*self.height
@@ -21,7 +21,7 @@ class RootWidget(Widget):
 
     def draw_stars_with_rotate(self, number):
         with self.canvas.before:
-            for number in xrange(number):
+            for number in range(number):
                 PushMatrix()
                 star_choice = self.choose_star()
                 rand_x = random()*self.width

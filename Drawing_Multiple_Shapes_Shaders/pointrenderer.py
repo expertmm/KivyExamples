@@ -33,7 +33,7 @@ class PointRenderer(Widget):
         star_list = []
         w, h = self.size
         sa = star_list.append
-        for number in xrange(number):
+        for number in range(number):
             rand_x = random()*w
             rand_y = random()*h
             size = 29.0
@@ -45,9 +45,9 @@ class PointRenderer(Widget):
     def draw_mesh(self, star_list):
         star_tex = Image('star1.png').texture
         vertex_format = [
-            ('vPosition', 2, 'float'),
-            ('vSize', 1, 'float'),
-            ('vRotation', 1, 'float'),
+            (b'vPosition', 2, 'float'),
+            (b'vSize', 1, 'float'),
+            (b'vRotation', 1, 'float'),
             ]
         indices = []
         ia = indices.append

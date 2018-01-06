@@ -77,7 +77,7 @@ class PongApp(App):
             Clock.schedule_interval(game.update, 1.0 / 60.0)
 
 if __name__ == '__main__':
-    if platform() == 'android':
+    if platform == 'android':
         sd_card_path = os.path.dirname('/sdcard/profiles/')
         if not os.path.exists(sd_card_path):
             os.mkdir(sd_card_path)

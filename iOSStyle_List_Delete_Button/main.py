@@ -30,7 +30,7 @@ class DeleteSlideButton(Button):
 					self.delete_button.button_anim_1.start(self.delete_button)
 
 	def button_pressed(self):
-		print 'button pressed: ', self
+		print('button pressed: ', self)
 
 
 class IOSDeleteButtonApp(App):

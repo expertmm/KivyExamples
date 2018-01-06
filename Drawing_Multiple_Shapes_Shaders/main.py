@@ -21,7 +21,7 @@ class MultiQuadRenderer(Widget):
     def draw_mesh_rectangle(self, number):
         star_list = []
         w, h = self.size
-        for number in xrange(number):
+        for number in range(number):
             rand_x = random()*w
             rand_y = random()*h
             rotation = random()*360.
@@ -48,14 +48,14 @@ class MultiQuadRenderer(Widget):
         uv_dict = self.return_uv_coordinates(filename, 'background_objects-0.png', size_tex)
         choices = [x for x in uv_dict]
         vertex_format = [
-            ('vPosition', 2, 'float'),
-            ('vTexCoords0', 2, 'float'),
-            ('vRotation', 1, 'float'),
-            ('vCenter', 2, 'float')
+            (b'vPosition', 2, 'float'),
+            (b'vTexCoords0', 2, 'float'),
+            (b'vRotation', 1, 'float'),
+            (b'vCenter', 2, 'float')
             ]
         indices = []
         ie = indices.extend
-        for quad_n in xrange(len(star_list)):
+        for quad_n in range(len(star_list)):
             offset = 4 * quad_n
             ie([0 + offset, 1 + offset, 
                 2 + offset, 2 + offset,
