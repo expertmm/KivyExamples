@@ -136,5 +136,5 @@ class PointShaderApp(App):
         return root
 
 if __name__ == '__main__':
-    #MultiQuadShaderApp().run()
-    cProfile.run('PointShaderApp().run()', 'point_prof')
+    PointShaderApp().run()
+    #cProfile.run('PointShaderApp().run()', 'point_prof')
