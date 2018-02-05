@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#this file was added by expertmm and based on pointrenderer.py
+# this file was added by expertmm and based on pointrenderer.py
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.graphics import PushMatrix, PopMatrix, Mesh, RenderContext
@@ -122,7 +122,7 @@ class PointRenderer(Widget):
                     texture=star_tex)
                 PopMatrix()
         else:
-            #self.mesh.indices = self.this_op.indices
+            # self.mesh.indices = self.this_op.indices
             self.mesh.vertices = self.this_op.vertices
             pass
 

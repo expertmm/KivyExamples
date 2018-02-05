@@ -2,7 +2,7 @@
 #version 120
 #ifdef GL_ES
     precision highp float;
-#endif
+# endif
 
 /* Outputs to the fragment shader */
 varying vec4 frag_color;
@@ -43,7 +43,7 @@ void main (void) {
 #version 120
 #ifdef GL_ES
     precision highp float;
-#endif
+# endif
 
 /* Outputs from the vertex shader */
 varying vec4 frag_color;
